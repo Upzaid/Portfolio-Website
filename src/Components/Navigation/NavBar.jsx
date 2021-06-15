@@ -1,15 +1,25 @@
 import React from  'react'
+import {Link} from 'react-router-dom'
 
-export default function Navbar(props){
+export default function Navbar(){
+
+    const hideSidebar = ()=>{
+        const sidebar = document.getElementById('sidebar')
+        sidebar.classList.toggle('active')
+    }
+
     return (
-        <nav>
-            <div></div>
-            <ul>
-                <li className="pointer bold">Resume</li>
-                <li className="pointer bold">About Me</li>
-                <li className="pointer bold">Projects</li>
-                <li className="pointer bold">Contact</li>
-            </ul>
-        </nav>
+        <div >
+            <input type="checkbox" id="toggler"/>
+            <label for="toggler" id="toggle" onClick={() => hideSidebar()}>☰</label>
+            <nav id="sidebar">
+                <ul>
+                    <Link to="/">Home</Link>
+                    <Link to="about">About</Link>
+                    <Link to="projects">Projects</Link>
+                    <Link to="contact">Contact</Link>
+                </ul>
+            </nav>
+        </div>
     )
 }
