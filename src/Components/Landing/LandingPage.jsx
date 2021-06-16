@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function LandingPage (){
     return(
-        <div className="content landing">
+        <div className="landing">
             <div>
                 <span className="font-7 ">ZAID LOREA</span><br />
                 <span className="font-3 ">Fullstack Developer.</span><br />
