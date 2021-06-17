@@ -8,19 +8,32 @@ export default function Work(){
             dates: "2019 - 2019",
             title: "Manager",
             company: "El Gremio: Trading Card Shop",
-            tasks: ["", "Task 2", "Task 3"]
+            tasks: [
+                "Increased customer satisfaction by offering excelent service.",
+                "Implemented inventroy mangement system.", 
+                "Developed relationships with new custumers and providers.",
+                "Achieved annual sales goals.",
+            ]
         },
         {
-            dates: "2017 - 2019",
+            dates: "2019 - 2017",
             title: "Titulo del Trabajo",
             company: "Autotransportes Pantaco",
-            tasks: ["", "Task 2", "Task 3"]
+            tasks: [
+                "", 
+                "Task 2",
+                "Task 3"
+            ]
         },
         {
             dates: "2017 - 2014",
-            title: "Titulo del Trabajo",
+            title: "Support Assistant",
             company: "Autotransportes Pantaco",
-            tasks: ["", "Task 2", "Task 3"]
+            tasks: [
+                "", 
+                "Task 2", 
+                "Task 3"
+            ]
         },
     ]
 

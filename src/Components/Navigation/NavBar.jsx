@@ -11,7 +11,7 @@ export default function Navbar(){
     return (
         <div >
             <input type="checkbox" id="toggler"/>
-            <label for="toggler" id="toggle" onClick={() => hideSidebar()}>☰</label>
+            <label htmlFor="toggler" id="toggle" onClick={() => hideSidebar()}>☰</label>
             <nav id="sidebar">
                 <ul>
                     <Link to="/">Home</Link>

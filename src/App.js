@@ -1,11 +1,9 @@
 import './App.css';
-import Website from './Components/Website'
+import Routes from './Routes'
 
 function App() {
   return (
-    <div className="App">
-      <Website />
-    </div>
+      <Routes />
   );
 }
 
