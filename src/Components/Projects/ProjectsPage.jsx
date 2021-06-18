@@ -8,7 +8,7 @@ export default function ProjectsPage(){
             title: "Game of Life React Edition",
             github: 'https://github.com/Upzaid/Life-React',
             description: `Jhon Conway's Game of Life built with React.`,
-            live: 'projects/game-of-life',
+            live: '/gameoflife',
             technologies: ['Javascript', 'React']
         },
         {

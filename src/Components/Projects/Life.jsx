@@ -1,11 +1,14 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 
 export default function GameOfLife (){
     
-    const [columns, setColumns] = useState(0)
-    const [rows, setRows] = useState(0)
+    const [columns, setColumns] = useState(50)
+    const [rows, setRows] = useState(50)
     const [grid, setGrid] = useState([])
-    const [run, setRun] = useState('pause')
+
+    useEffect(()=>{
+        setGrid(createGrid(rows, columns))
+    }, [])
 
     const createGrid = (rows, columns) =>{
         let board = []
@@ -23,6 +26,12 @@ export default function GameOfLife (){
         }
         return board
     }
+    
+    const changeCell = (i, j) =>{
+        const newGrid = [...grid]
+        newGrid[i][j].value === 0 ?  newGrid[i][j].value = 1 : newGrid[i][j].value = 0
+        setGrid(newGrid);
+    }
 
     const countNeighbors = (board, row, column) =>{
         let sum = 0
@@ -39,15 +48,8 @@ export default function GameOfLife (){
         return sum
     } 
 
-
-    const changeCell = (i, j) =>{
-        const newGrid = [...grid]
-        newGrid[i][j].value === 0 ?  newGrid[i][j].value = 1 : newGrid[i][j].value = 0
-        setGrid(newGrid);
-    }
-
-    const runLife = (board) =>{
-
+    const life = (board) =>{
+        
         const newGrid = []
 
         for (let i = 0; i < board.length; i++){
@@ -76,7 +78,7 @@ export default function GameOfLife (){
             }
             newGrid.push(newRow)
         }
-        setGrid(newGrid)
+        return newGrid
     }
 
     // Inline Styles for the Grid
@@ -116,9 +118,8 @@ export default function GameOfLife (){
                 <br />
                 <button onClick={()=>setGrid(createGrid(rows, columns))}>Generate Board</button>
                 <button onClick={()=> {
-                    run === 'pause' ? setRun('play') :  setRun('pause')
-                    runLife(grid)
-                    }}>{run === 'pause' ? 'Play' : 'Pause'}</button>
+                    setGrid(life(grid))
+                    }}>Next Generation</button>
                 <div style={gridStyle}>
                     {grid.map((row, i) =>{
                         return(
@@ -126,9 +127,10 @@ export default function GameOfLife (){
                                 {row.map(cell=>{
                                     return(
                                         <div 
-                                        key={`${cell.row} ${cell.column}`}
-                                        className="cell" style={cell.value === 0 ? cellStyleInactive : cellStyleActive } 
-                                        onClick={()=> changeCell(cell.row, cell.column)}>
+                                            key={`${cell.row} ${cell.column}`}
+                                            className="cell" style={cell.value === 0 ? cellStyleInactive : cellStyleActive } 
+                                            onDragLeave={()=> changeCell(cell.row, cell.column)}
+                                            onClick={()=> changeCell(cell.row, cell.column)}>
                                         </div>
                                     )
                                 })}

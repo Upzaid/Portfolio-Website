@@ -28,7 +28,7 @@ export default function AboutMe(){
                 </ul><br />
                 <p>I have also dabbled with Python, Firebase and Bootstrap. Although there are always new things to learn,
                      picking up new frameworks, languages or technologies is not a problem.</p><br />
-                <p>If you have an idea that you would like to see come to reality or collaborate feel free to <a href="contact">reach out</a> so we can make things happen.
+                <p>If you have an idea that you would like to see come to reality or collaborate feel free to <a href="/contact">reach out</a> so we can make things happen.
                 </p>
             </div>
         </div>

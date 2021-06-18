@@ -14,7 +14,7 @@ export default function Routes(){
                 <Route path='/' exact component={LandingPage}/>
                 <Route path='/about' exact component={AboutMe}/>
                 <Route path='/projects' exact component={ProjectsPage}/>
-                <Route path='/projects/game-of-life' exact component={GameOfLife}/>
+                <Route path='/gameoflife' exact component={GameOfLife}/>
                 <Route path='/contact' exact component={Contact}/>
         </Router >
     )
